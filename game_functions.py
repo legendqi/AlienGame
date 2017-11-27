@@ -10,30 +10,30 @@ def check_events(ai_settings, screen, ship, bullets):
 		if event.type==pygame.QUIT:
 			sys.exit()
 		elif event.type==pygame.KEYDOWN:
-			# check_keydown_events(event,ai_settings,screen,ship,bullets)
+			check_keydown_events(event,ai_settings,screen,ship,bullets)
 			# print("centerx: "+ship.rect.centerx+ "  bottom :"+ship.rect.bottom)
-			if event.key==pygame.K_RIGHT:
-				#向右移动飞船
-				ship.moving_right=True
-				ship.rect.centerx+=1
-				print(str(ship.rect.centerx))
-			elif event.key==pygame.K_LEFT:
-				#向移动飞船
-				print('left')
-				ship.moving_left=True
-				print('left centerx>0')
-				ship.rect.centerx-=1
-			elif event.key==pygame.K_SPACE:
-				# 创建一颗子弹,并将其加入到编组bullets中
-				new_bullet=Bullte(ai_settings,screen,ship)
-				print("add new bullte")
-				bullets.add(new_bullet)
+			# if event.key==pygame.K_RIGHT:
+			# 	#向右移动飞船
+			# 	ship.moving_right=True
+			# 	ship.rect.centerx+=1
+			# 	print(str(ship.rect.centerx))
+			# elif event.key==pygame.K_LEFT:
+			# 	#向移动飞船
+			# 	print('left')
+			# 	ship.moving_left=True
+			# 	print('left centerx>0')
+			# 	ship.rect.centerx-=1
+			# elif event.key==pygame.K_SPACE:
+			# 	# 创建一颗子弹,并将其加入到编组bullets中
+			# 	new_bullet=Bullte(ai_settings,screen,ship)
+			# 	print("add new bullte")
+			# 	bullets.add(new_bullet)
 		elif event.type==pygame.KEYUP:
-			if event.key==pygame.K_RIGHT:
-				ship.moving_right=False
-			elif event.key==pygame.K_LEFT:
-				ship.moving_left=False
-			# check_keyup_events(ai_settings,screen,ship)
+			# if event.key==pygame.K_RIGHT:
+			# 	ship.moving_right=False
+			# elif event.key==pygame.K_LEFT:
+			# 	ship.moving_left=False
+			check_keyup_events(event,ship)
 def update_screen(ai_settings, screen, ship,bulltes):
 	"""更新屏幕上的图像,并切换到新屏幕"""
 	# 每次循环时都重绘屏幕

@@ -10,8 +10,8 @@ def run_game():
 	# 初始化游戏并创建一个屏幕对象
 	pygame.init()
 	ai_settings=Settings()
-	screen=pygame.display.set_mode((1000,600))
-	#screen=pygame.display.set_mode(ai_settings.screen_width,ai_settings.screen_height)
+	#screen=pygame.display.set_mode((1000,600))
+	screen=pygame.display.set_mode((ai_settings.screen_width,ai_settings.screen_height))
 	pygame.display.set_caption("Alien Invasion")
 	# 创建一艘飞船
 	ship=Ship(ai_settings,screen)
@@ -28,4 +28,5 @@ def run_game():
 		# ship.update()
 		bulltes.update()
 		gf.update_screen(ai_settings,screen,ship,bulltes)
+
 run_game()
